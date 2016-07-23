@@ -8,8 +8,8 @@ type Square struct {
 	side int
 }
 
-func (s Square) Area() int {
-	return s.side * s.side
+func (square Square) Area() int {
+	return square.side * square.side
 }
 
 type Rectangle struct {
@@ -17,15 +17,15 @@ type Rectangle struct {
 	breadth int
 }
 
-func (r Rectangle) Area() int {
-	return r.length * r.breadth
+func (rectangle Rectangle) Area() int {
+	return rectangle.length * rectangle.breadth
 }
 
 type Hybrid struct {
-	s Shape
-	r Shape
+	square Shape
+	rectangle Shape
 }
 
-func (h Hybrid) Area() int {
-	return h.s.Area() + h.r.Area()
+func (hybrid Hybrid) Area() int {
+	return hybrid.square.Area() + hybrid.rectangle.Area()
 }
