@@ -31,3 +31,15 @@ func TestAreaofComplexShape(t *testing.T) {
 		t.Errorf("Expected area of hybrid to be 106, got %d", result)
 	}
 }
+
+func TestAreaofHybrids(t *testing.T) {
+	s := Square{side: 10}
+	r := Rectangle{length: 2, breadth: 3}
+
+	h := Hybrids{s, r}
+	result := h.Area()
+
+	if result != 106 {
+		t.Errorf("Expected area of hybrid to be 106, got %d", result)
+	}
+}
