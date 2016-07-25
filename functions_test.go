@@ -25,7 +25,7 @@ func TestGetDisplayNameFrenchStyle(t *testing.T) {
 
 func TestGetCustomDisplayName(t *testing.T) {
 	u := User{FirstName: "Rahul", LastName: "Singh"}
-	// u.CustomAction = a
+	u.CustomAction = HiphenName
 	cd, _ := u.GetCustomDisplay()
 
 	if cd != "Rahul-Singh" {
@@ -33,6 +33,6 @@ func TestGetCustomDisplayName(t *testing.T) {
 	}
 }
 
-// func a(u User) string {
-// 	return fmt.Sprintf("%s-%s", u.FirstName, u.LastName)
-// }
+func HiphenName(u User) string {
+	return fmt.Sprintf("%s-%s", u.FirstName, u.LastName)
+}
