@@ -13,8 +13,13 @@ func TestMapLikes(t *testing.T) {
 	if !contains(people, "spiderman") {
 		t.Errorf("Expected %v to contain spiderman", people)
 	}
-
 	if !contains(people, "flash") {
 		t.Errorf("Expected %v to contain flash", people)
+	}
+	if contains(people, "superman") {
+		t.Errorf("Not expected %v to contain superman", people)
+	}
+	if contains(people, "shitman") {
+		t.Errorf("Not expected %v to contain superman", people)
 	}
 }
