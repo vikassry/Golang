@@ -32,7 +32,7 @@ func TestAreaofComplexShape(t *testing.T) {
 	}
 }
 
-func TestAreaofHybrids(t *testing.T) {
+func TestAreaOfHybrids(t *testing.T) {
 	s := Square{side: 10}
 	r := Rectangle{length: 2, breadth: 3}
 
