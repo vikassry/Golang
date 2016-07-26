@@ -43,5 +43,10 @@ func equals(list1 []string, list2 []string) bool {
 }
 
 func partialReverse(src []int, from, to int) []int {
-	return nil
+	var partialReversed []int
+	for index := to; index >= from; index-- {
+		partialReversed = append(partialReversed, src[index])
+	}
+	return partialReversed
+
 }

@@ -37,7 +37,8 @@ func TestFilterInts(t *testing.T) {
 	}
 	for i := range res {
 		if res[i] != expectedResult[i] {
-			t.Errorf("Expected the result to be %v, but got %v", expectedResult, res)
+			t.Errorf("Expected '%d' at index '%d' but got '%d'", expectedResult[i], i, res)
+
 		}
 	}
 }
