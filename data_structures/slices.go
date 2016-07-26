@@ -3,17 +3,23 @@ package data_structures
 type mapOperation func(int32) int32
 type filterOperation func(int32) bool
 
-func mapInts(operation mapOperation, vals []int32) []int32 {
-	var mapped_values []int32
-	for _, value := range vals {
-		mapped_values = append(mapped_values, operation(value))
+func mapInts(operation mapOperation, values []int32) []int32 {
+	var mappedValues []int32
+	for _, value := range values {
+		mappedValues = append(mappedValues, operation(value))
 	}
-	return mapped_values
+	return mappedValues
 
 }
 
-func filterInts(operation filterOperation, vals []int32) []int32 {
-	return []int32{3}
+func filterInts(operation filterOperation, values []int32) []int32 {
+	var filterValues []int32
+	for _, value := range values {
+		if operation(value) {
+			filterValues = append(filterValues, value)
+		}
+	}
+	return filterValues
 }
 
 func concatenate(destination []string, newValues ...string) []string {
@@ -24,12 +30,12 @@ func concatenate(destination []string, newValues ...string) []string {
 }
 
 func equals(list1 []string, list2 []string) bool {
-	if len(list1) != len(list2){
+	if len(list1) != len(list2) {
 		return false
 	}
 	isEqual := true
-	for index, value := range list2{
-		if list1[index] != value{
+	for index, value := range list2 {
+		if list1[index] != value {
 			isEqual = false
 		}
 	}

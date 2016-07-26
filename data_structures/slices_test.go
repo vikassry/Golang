@@ -28,14 +28,13 @@ func TestFilterInts(t *testing.T) {
 
 	}
 
-	res := filterInts(greaterThanTwo, []int32{1, 2, 3, 4})
-	expectedResult := []int32{3, 5}
+	res := filterInts(greaterThanTwo, []int32{11, 2, 1, 4})
+	expectedResult := []int32{11, 4}
 
-	if len(res) < 1 {
+	if len(res) != len(expectedResult) {
 		t.Errorf("Expected the result to be %v, but got %v", expectedResult, res)
 
 	}
-
 	for i := range res {
 		if res[i] != expectedResult[i] {
 			t.Errorf("Expected the result to be %v, but got %v", expectedResult, res)
