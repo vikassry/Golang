@@ -5,20 +5,22 @@ import (
 )
 
 func second () {
-	fmt.Printf("I am second!\n")
+	r := recover()
+	fmt.Printf("I am second! %s\n", r)
 }
 
 func first() {
-	defer func() {
-	fmt.Printf("I am second!\n")
-}()
+// 	defer func() {
+// 	fmt.Printf("I am second!\n")
+// }()
 	fmt.Printf("I am First!\n")
 }
 
 func main() {
-	defer second()
 	first()
 	first()
 	fmt.Printf("I am at the end!\n")
+	defer second()
 
+	panic("panicccccccccccccccccc")
 }
