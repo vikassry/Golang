@@ -1,2 +1,2 @@
-# twblr.github.io
-golang workshop 
+
+# GolangDemo
