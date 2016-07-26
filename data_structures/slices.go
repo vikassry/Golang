@@ -17,24 +17,23 @@ func filterInts(operation filterOperation, vals []int32) []int32 {
 }
 
 func concatenate(destination []string, newValues ...string) []string {
-	// for _, newVal := range newValues {
-	// 	destination = append(destination, newVal)
-	// }
+	for _, newVal := range newValues {
+		destination = append(destination, newVal)
+	}
 	return destination
 }
 
 func equals(list1 []string, list2 []string) bool {
-	return false
-	// if len(list1) != len(list2){
-	// 	return false
-	// }
-	// isEqual := true
-	// for index, value := range list2{
-	// 	if list1[index] != value{
-	// 		isEqual = false
-	// 	}
-	// }
-	// return isEqual
+	if len(list1) != len(list2){
+		return false
+	}
+	isEqual := true
+	for index, value := range list2{
+		if list1[index] != value{
+			isEqual = false
+		}
+	}
+	return isEqual
 }
 
 func partialReverse(src []int, from, to int) []int {
